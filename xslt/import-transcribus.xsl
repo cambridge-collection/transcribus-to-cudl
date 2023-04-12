@@ -86,7 +86,28 @@
     </xsl:template>
     
     <xsl:template match="/" mode="#default">
-        <xsl:apply-templates select="$cudl_root"/>
+        <xsl:variable name="surface_elems_exist" select="exists(/tei:TEI/tei:facsimile/tei:surface)" as="xs:boolean"/>
+        <xsl:variable name="body_pbs_exist" select="exists(.//tei:body//tei:pb)" as="xs:boolean"/>
+        
+        <xsl:choose>
+            <xsl:when test="$body_pbs_exist and $surface_elems_exist">
+                <xsl:apply-templates select="$cudl_root"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:variable name="error_messages" as="xs:string*">
+                    <xsl:if test="not($body_pbs_exist)">
+                        <xsl:sequence select="'ERROR: No pb elements in body'"/>
+                    </xsl:if>
+                    <xsl:if test="not($surface_elems_exist)">
+                        <xsl:sequence select="'ERROR: No surface elements in facsimile'"/>
+                    </xsl:if>
+                </xsl:variable>
+                <xsl:for-each select="$error_messages">
+                    <xsl:comment select="."/>
+                    <xsl:message select="."/>
+                </xsl:for-each>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="/tei:TEI">
@@ -138,10 +159,11 @@
     </xsl:template>
     
     <xsl:template match="tei:body">
+        <xsl:variable name="pb_elems" select="descendant::tei:pb" as="item()*"/>
         <xsl:copy>
             <xsl:copy-of select="@*"/>
             <div>
-                <xsl:for-each select="descendant::tei:pb">
+                <xsl:for-each select="$pb_elems">
                     <xsl:variable name="current_pb" select="."/>
                     <xsl:variable name="surface_num" select="replace(@facs, '^\D+(\d+)$', '$1')" as="xs:string"/>
                     <xsl:value-of select="util:indent-elem($current_pb)"/>
@@ -156,6 +178,11 @@
                     </xsl:choose>
                 </xsl:for-each>
             </div>
+            <xsl:if test="$paginated_content[not(replace(@xml:id, '^\D+(\d+)$', '$1') = $pb_elems/replace(@facs, '^\D+(\d+)$', '$1'))]">
+                <xsl:variable name="error_message" select="concat('ERROR: Pages (' ,$paginated_content[not(replace(@xml:id, '^\D+(\d+)$', '$1') = $pb_elems/replace(@facs, '^\D+(\d+)$', '$1'))]/@xml:id,') does not matche any pages in the CUDL file')"/>
+                <xsl:comment select="$error_message"/>
+                <xsl:message select="$error_message"/>
+            </xsl:if>
         </xsl:copy>
     </xsl:template>
     

@@ -162,6 +162,7 @@
         <xsl:variable name="pb_elems" select="descendant::tei:pb" as="item()*"/>
         <xsl:copy>
             <xsl:copy-of select="@*"/>
+            <xsl:value-of select="util:indent-to-depth(count(ancestor::*) + 1)"/>
             <div>
                 <xsl:for-each select="$pb_elems">
                     <xsl:variable name="current_pb" select="."/>
@@ -177,12 +178,14 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:for-each>
+                <xsl:value-of select="util:indent-to-depth(count(ancestor::*) + 1)"/>
             </div>
             <xsl:if test="$paginated_content[not(replace(@xml:id, '^\D+(\d+)$', '$1') = $pb_elems/replace(@facs, '^\D+(\d+)$', '$1'))]">
                 <xsl:variable name="error_message" select="concat('ERROR: Pages (' ,$paginated_content[not(replace(@xml:id, '^\D+(\d+)$', '$1') = $pb_elems/replace(@facs, '^\D+(\d+)$', '$1'))]/@xml:id,') does not matche any pages in the CUDL file')"/>
                 <xsl:comment select="$error_message"/>
                 <xsl:message select="$error_message"/>
             </xsl:if>
+            <xsl:value-of select="util:indent-elem(.)"/>
         </xsl:copy>
     </xsl:template>
     

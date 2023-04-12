@@ -164,6 +164,8 @@
         <xsl:copy-of select="transkribus:get-cudl-pb(.)"/>
     </xsl:template>
     
+    <xsl:template match="tei:ab[not(normalize-space(@type))]/@type" mode="add-page-content"/>
+    
     <!-- Optimised getters -->
     
     <xsl:function name="transkribus:get-cudl-pb" as="item()*">

@@ -91,6 +91,10 @@
     
     <xsl:template match="/tei:TEI">
         <xsl:text>&#10;</xsl:text>
+        <xsl:for-each select="root(.)/processing-instruction()">
+            <xsl:copy-of select="."/>
+            <xsl:text>&#10;</xsl:text>
+        </xsl:for-each>
         <xsl:copy>
             <xsl:copy-of select="@*"/>
             <xsl:apply-templates/>

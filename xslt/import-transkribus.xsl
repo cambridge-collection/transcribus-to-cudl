@@ -34,7 +34,7 @@
     
     <xsl:variable name="export_root" select="/*"/>
     
-    <xsl:variable name="cudl_filename" select="//tei:idno[@type='external'][matches(.,'https://cudl.lib.cam.ac.uk/iiif/')]/tokenize(replace(.,'/\s*$',''), '/')[last()]" />
+    <xsl:variable name="cudl_filename" select="//tei:idno[@type='external'][matches(.,'https://cudl.lib.cam.ac.uk/iiif/')]/tokenize(replace(replace(.,'/simple$',''),'/\s*$',''), '/')[last()]" />
     <xsl:variable name="path_to_cudl_file" select="replace(concat(string-join(($selected_path_to_cudl_source, $subpath_to_tei_dir, $cudl_filename),'/'),'/',$cudl_filename,'.xml'),'^file:','')"/>
     <xsl:variable name="cudl_root" select="if (doc-available($path_to_cudl_file)) then doc($path_to_cudl_file)/* else ()"/>
     

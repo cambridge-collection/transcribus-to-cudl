@@ -5,11 +5,16 @@ Contains the XSLT that converts and tidies Transkribus-exported TEI files into C
 ## Prerequisites
 
 1. A TEI file exported from Transkribus
-1. A local copy of `staging-cudl-data-source`. 
+2. A local copy of `staging-cudl-data-source`.
 
 If `staging-cudl-data-source` is placed at the root level of this repository, it will be automatically discovered by the XSLT code. 
 
 If it is placed anywhere else, you will need to pass the **full (not relative) path** to the XSLT using the `full_path_to_cudl_data_source` parameter.
+
+You will then be able to run the transformation with the command e.g:
+
+    java  -jar bin/saxon/saxon-he-10.2.jar -s:source.xml -xsl:xslt/curious-cures.xslt -o:output.xml
+
 
 ## Running the transformation
 

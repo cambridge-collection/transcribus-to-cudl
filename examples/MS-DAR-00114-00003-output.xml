@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="DCP-LETT-729">
+    <teiHeader>
+        <fileDesc>
+        <titleStmt>
+            <title xml:id="main_title">Letter from C. R. Darwin to  J. D. Hooker   [11 January 1844]</title>
+        </titleStmt>
+        <publicationStmt>
+            <authority>Darwin Correspondence Project</authority>
+            <publisher>Cambridge University Press</publisher>
+            <pubPlace>Cambridge</pubPlace>
+            <idno type="lognum">2003</idno>
+            <availability status="restricted">
+                <p>Available under license only</p>
+            </availability>
+            <availability xml:id="displayImageRights" status="restricted">
+                <p>Zooming image © Cambridge University Library, All rights reserved.</p>
+            </availability>
+            <availability xml:id="downloadImageRights" status="restricted">
+                <licence>This image may be used in accord with fair use and fair dealing provisions, including teaching and research. If you wish to reproduce it within publications or on the public web, please make a reproduction request.</licence>
+            </availability>
+            <availability xml:id="metadataRights" status="restricted">
+                <licence target="http://creativecommons.org/licenses/by-nc-nd/3.0/">This metadata is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License.</licence>
+            </availability>
+            <date when="1988">1988</date>
+            <idno type="calendarnum">729</idno>
+            <idno type="documentNumber">DCP-LETT-729</idno>
+        </publicationStmt>
+        <seriesStmt>
+            <title level="s">The Correspondence of Charles Darwin</title>
+            <biblScope unit="vol" n="03">3</biblScope>
+        </seriesStmt>
+        <notesStmt>
+            <note type="physdesc" n="ALS">5pp</note>
+            <relatedItem type="copy" subtype="CUL"><bibl>CUL DAR 151: 1</bibl></relatedItem>
+            <relatedItem type="publication">
+                <bibl> <hi rend="italic">LL</hi> 2: 23;</bibl>
+            </relatedItem>
+            <relatedItem type="publication">
+                <bibl> <hi rend="italic">ML</hi> 1: 39</bibl>
+            </relatedItem>
+            <relatedItem type="publication">
+                <bibl> <hi rend="italic">Correspondence</hi> 3: 1</bibl>
+            </relatedItem>
+        </notesStmt>
+        <sourceDesc>
+            <bibl type="provenance">MS DAR 114: 3</bibl>
+            <msDesc>
+                <msIdentifier>
+                    <country>UK</country><settlement>Cambridge</settlement><repository>Cambridge University Library</repository>
+                    
+                    <idno>MS DAR 114: 3</idno>
+                </msIdentifier>
+<msContents n="1"><msItem n="1"><title>Letter from C. R. Darwin to  J. D. Hooker   [11 January 1844]</title></msItem></msContents>
+            <physDesc resp="#mjhawkins"><objectDesc><supportDesc><support>Paper</support><extent>5pp</extent></supportDesc></objectDesc></physDesc><additional resp="#mjhawkins"><adminInfo><recordHist><source>Published in volume 3 of the Correspondence of Charles Darwin, Cambridge University Press</source></recordHist></adminInfo></additional></msDesc>
+        </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+        <correspDesc>
+            <correspAction type="sent">
+                <persName n="Darwin, C. R." key="nameregs_1.xml">Darwin, Charles Robert</persName>
+                <placeName>Down</placeName>
+                <date when="1844-01-11">[11 Jan 1844]</date>
+            </correspAction>
+            <correspAction type="received">
+                <persName n="Hooker, J. D." key="nameregs_2357.xml">Hooker, Joseph Dalton</persName>
+            </correspAction>
+        </correspDesc>
+        <abstract>
+            <p>Queries on ratios of species to genera on southern islands. CD’s observations on distribution of Galapagos organisms, and on S. American fossils, and facts he has gathered since, lead him to conclusion that species are not immutable; "it is like confessing a murder".</p>
+        </abstract>
+        
+        <langUsage>
+            <language ident="eng">English</language>
+        </langUsage>
+    </profileDesc>
+    <revisionDesc>
+        <change when="2016-07-12" status="transcribed">Transcribed by <name xml:id="dcp">Darwin Correspondence Project</name></change>
+        <change when="2016-07-12" status="initialProofCompleted">Transcribed by Darwin Correspondence Project</change>
+        <change when="2016-07-12" status="secondProofCompleted">Transcribed by Darwin Correspondence Project</change>
+        <change when="2016-07-12" status="footnoted">Transcribed by Darwin Correspondence Project</change>
+        <change when="2016-07-12" status="reviewed">Transcribed by Darwin Correspondence Project</change>
+        <change when="2016-07-12" status="editorResponseCompleted">Transcribed by Darwin Correspondence Project</change>
+        <change when="2016-07-12" status="finalProofreadCompleted">Transcribed by Darwin Correspondence Project</change>
+        <change when="2016-07-12" status="copyedited">Transcribed by Darwin Correspondence Project</change>
+        <change when="2016-07-12" type="letter" status="released">Transcription cleared for online release</change>
+        <change when="2016-07-12" type="footnotes" status="released">Footnotes cleared for online release</change>
+        <change when="2016-07-12">Converted to TEI P5 by Michael Hawkins</change>
+        <change when="2020-09-22" status="exportToCUDL">Exported to CUDL by Michael Hawkins</change>
+        </revisionDesc>
+    </teiHeader>
+    <facsimile>
+        <graphic decls="#document-thumbnail" rend="portrait" url="MS-DAR-00114-00003-000-00001"/>
+        
+        
+        <surface xml:id="i1" n="1r" lrx="1378" lry="2000" ulx="0" uly="0">
+            <graphic decls="#downloadImageRights #download" url="MS-DAR-00114-00003-000-00001" rend="portrait" width="5549px" height="8053px"/>
+            <zone points="132,192 1278,192 1278,1652 132,1652" rendition="TextRegion" xml:id="facs_1_tr_1">
+                <zone points="725,258 737,262 744,255 756,257 778,270 803,250 834,248 845,257 867,247 878,250 879,195 857,196 840,189 826,196 768,192 728,199" rendition="Line" xml:id="facs_1_tr_1_tl_1"/>
+                <zone points="594,322 851,308 886,330 957,298 1001,319 1060,299 1098,322 1099,241 1019,244 974,285 892,246 850,267 804,251 771,285 725,294 658,240 596,262" rendition="Line" xml:id="facs_1_tr_1_tl_2"/>
+                <zone points="826,391 920,384 937,401 1009,408 1057,371 1198,380 1225,371 1228,326 1183,313 1146,329 1115,315 917,340 830,308" rendition="Line" xml:id="facs_1_tr_1_tl_3"/>
+                <zone points="124,397 172,406 205,378 227,387 254,371 289,377 333,353 416,373 421,291 301,346 233,312 199,337 179,319 127,326" rendition="Line" xml:id="facs_1_tr_1_tl_4"/>
+                <zone points="198,454 1222,446 1233,375 814,411 621,374 469,432 199,395" rendition="Line" xml:id="facs_1_tr_1_tl_5"/>
+                <zone points="152,531 1225,501 1164,442 155,467" rendition="Line" xml:id="facs_1_tr_1_tl_6"/>
+                <zone points="196,614 310,579 1226,545 1228,505 1098,488 1006,524 782,497 624,536 459,514 371,559 200,538" rendition="Line" xml:id="facs_1_tr_1_tl_7"/>
+                <zone points="169,686 219,653 495,675 649,625 868,610 929,642 1012,611 1047,642 1207,608 1209,569 953,550 397,620 175,594" rendition="Line" xml:id="facs_1_tr_1_tl_8"/>
+                <zone points="152,745 895,666 1239,696 1235,632 879,653 748,618 629,680 392,665 230,716 157,683" rendition="Line" xml:id="facs_1_tr_1_tl_9"/>
+                <zone points="152,814 793,741 865,776 937,738 1212,744 1245,683 1032,720 854,686 550,747 423,721 333,771 158,751" rendition="Line" xml:id="facs_1_tr_1_tl_10"/>
+                <zone points="148,875 852,811 1187,810 1257,859 1260,789 1200,768 1057,795 955,755 899,793 677,766 573,819 525,783 397,826 151,817" rendition="Line" xml:id="facs_1_tr_1_tl_11"/>
+                <zone points="165,944 972,875 1068,923 1067,824 728,878 683,841 614,881 476,865 429,898 364,868 171,882" rendition="Line" xml:id="facs_1_tr_1_tl_12"/>
+                <zone points="179,1030 545,971 968,951 972,893 889,920 830,885 651,955 495,936 430,978 373,947 186,961" rendition="Line" xml:id="facs_1_tr_1_tl_13"/>
+                <zone points="148,1098 1013,1002 1239,1027 1262,979 1012,947 871,998 699,975 154,1033" rendition="Line" xml:id="facs_1_tr_1_tl_14"/>
+                <zone points="185,1150 501,1149 676,1092 892,1106 995,1065 1154,1098 1190,1040 1058,1020 893,1064 785,1026 471,1097 309,1074 188,1105" rendition="Line" xml:id="facs_1_tr_1_tl_15"/>
+                <zone points="1195,1106 1204,1105 1209,1109 1212,1106 1219,1112 1232,1106 1243,1112 1250,1105 1266,1105 1252,1025 1236,1026 1214,1049 1205,1051 1200,1047 1185,1051" rendition="Line" xml:id="facs_1_tr_1_tl_16"/>
+                <zone points="167,1231 780,1147 1246,1161 1250,1112 940,1080 676,1139 597,1105 375,1181 171,1174" rendition="Line" xml:id="facs_1_tr_1_tl_17"/>
+                <zone points="1046,1185 1065,1183 1091,1193 1135,1176 1198,1184 1216,1194 1225,1191 1221,1153 1204,1150 1183,1163 1152,1142 1111,1152 1082,1133 1073,1142 1039,1133" rendition="Line" xml:id="facs_1_tr_1_tl_18"/>
+                <zone points="159,1303 954,1208 1231,1222 1020,1154 823,1208 594,1187 514,1235 411,1209 164,1255" rendition="Line" xml:id="facs_1_tr_1_tl_19"/>
+                <zone points="216,1389 992,1273 1216,1298 1222,1246 1009,1209 714,1284 638,1255 385,1303 226,1290" rendition="Line" xml:id="facs_1_tr_1_tl_20"/>
+                <zone points="143,1434 1001,1336 1272,1394 1279,1311 1112,1321 1020,1277 457,1384 147,1394" rendition="Line" xml:id="facs_1_tr_1_tl_21"/>
+                <zone points="137,1382 144,1383 152,1375 167,1379 183,1370 209,1372 210,1339 196,1336 188,1338 179,1329 172,1331 158,1328 154,1331 147,1325 138,1324" rendition="Line" xml:id="facs_1_tr_1_tl_22"/>
+                <zone points="141,1530 545,1499 772,1435 1263,1442 1266,1408 1089,1359 902,1410 621,1397 457,1458 409,1427 148,1459" rendition="Line" xml:id="facs_1_tr_1_tl_23"/>
+                <zone points="1063,1454 1071,1452 1073,1454 1074,1452 1078,1456 1084,1458 1085,1456 1102,1469 1116,1471 1112,1423 1095,1421 1084,1413 1075,1421 1070,1418 1060,1420" rendition="Line" xml:id="facs_1_tr_1_tl_24"/>
+                <zone points="150,1581 246,1602 888,1503 1132,1500 1267,1551 1274,1448 912,1428 834,1483 152,1537" rendition="Line" xml:id="facs_1_tr_1_tl_25"/>
+                <zone points="167,1647 615,1603 710,1631 889,1579 1240,1613 1245,1542 1116,1561 906,1517 785,1569 169,1578" rendition="Line" xml:id="facs_1_tr_1_tl_26"/>
+            </zone>
+        </surface>
+        <surface xml:id="i2" n="1v" lrx="1307" lry="2000" ulx="0" uly="0">
+            <graphic decls="#downloadImageRights #download" url="MS-DAR-00114-00003-000-00002" rend="portrait" width="5185px" height="7934px"/>
+        </surface>
+        <surface xml:id="i3" n="2r" lrx="1319" lry="2000" ulx="0" uly="0">
+            <graphic decls="#downloadImageRights #download" url="MS-DAR-00114-00003-000-00003" rend="portrait" width="5273px" height="7994px"/>
+        </surface>
+        <surface xml:id="i4" n="2v" lrx="1311" lry="2000" ulx="0" uly="0">
+            <graphic decls="#downloadImageRights #download" url="MS-DAR-00114-00003-000-00004" rend="portrait" width="5214px" height="7954px"/>
+        </surface>
+        <surface xml:id="i5" n="3r" lrx="1343" lry="2000" ulx="0" uly="0">
+            <graphic decls="#downloadImageRights #download" url="MS-DAR-00114-00003-000-00005" rend="portrait" width="5500px" height="8191px"/>
+        </surface>
+        <surface xml:id="i6" n="3v" lrx="1413" lry="2000" ulx="0" uly="0">
+            <graphic decls="#downloadImageRights #download" url="MS-DAR-00114-00003-000-00006" rend="portrait" width="5470px" height="7740px"/>
+        </surface>
+    </facsimile>
+    <text>
+    <body>
+            <div>
+                    <pb xml:id="pb-i1" n="1r" facs="#i1"/><ab facs="#facs_1_tr_1">
+               <lb facs="#facs_1_tr_1_tl_1" n="N001"/>Jay 1642
+               <lb facs="#facs_1_tr_1_tl_2" n="N002"/>Down Bromley Rent
+               <lb facs="#facs_1_tr_1_tl_3" n="N003"/>Wenedy and
+               <lb facs="#facs_1_tr_1_tl_4" n="N004"/>My dear Sir
+               <lb facs="#facs_1_tr_1_tl_5" n="N005"/>must write to thank ym for our last letter
+               <lb facs="#facs_1_tr_1_tl_6" n="N006"/>I ta tell you how much all your new
+               <lb facs="#facs_1_tr_1_tl_7" n="N007"/>feet intered me. I must be allowed &amp;
+               <lb facs="#facs_1_tr_1_tl_8" n="N008"/>put my own interpretelion on what you by of not
+               <lb facs="#facs_1_tr_1_tl_9" n="N009"/>by a ford amonger stated that
+               <lb facs="#facs_1_tr_1_tl_10" n="N010"/>that you so it didge in the loose spentions
+               <lb facs="#facs_1_tr_1_tl_11" n="N011"/>so early stated ye every smether ovenley
+               <lb facs="#facs_1_tr_1_tl_12" n="N012"/>collector – I took it a str tending
+               <lb facs="#facs_1_tr_1_tl_13" n="N013"/>genture is an entire et
+               <lb facs="#facs_1_tr_1_tl_14" n="N014"/>What tit shall you take on the Petigonia side
+               <lb facs="#facs_1_tr_1_tl_15" n="N015"/>in origns morte, I believe he made a
+               <lb facs="#facs_1_tr_1_tl_16" n="N016"/>
+               <lb facs="#facs_1_tr_1_tl_17" n="N017"/>Matie to R. Regn, when Petefore returns it
+               <lb facs="#facs_1_tr_1_tl_18" n="N018"/>at
+               <lb facs="#facs_1_tr_1_tl_19" n="N019"/>usual forton apparance; et Bet Banc
+               <lb facs="#facs_1_tr_1_tl_20" n="N020"/>feels of Peter men and into
+               <lb facs="#facs_1_tr_1_tl_21" n="N021"/>&amp; salanes of Sr. Pat. The tes of Sr. Petty
+               <lb facs="#facs_1_tr_1_tl_22" n="N022"/>t
+               <lb facs="#facs_1_tr_1_tl_23" n="N023"/>Co I Mated ever place is power &amp; sees the
+               <lb facs="#facs_1_tr_1_tl_24" n="N024"/>the
+               <lb facs="#facs_1_tr_1_tl_25" n="N025"/>then would in worth conserion with in Pelton
+               <lb facs="#facs_1_tr_1_tl_26" n="N026"/>collection d Orbigny – I do not him and
+            </ab>
+                    <pb xml:id="pb-i2" n="1v" facs="#i2"/>
+                    <pb xml:id="pb-i3" n="2r" facs="#i3"/>
+                    <pb xml:id="pb-i4" n="2v" facs="#i4"/>
+                    <pb xml:id="pb-i5" n="3r" facs="#i5"/>
+                    <pb xml:id="pb-i6" n="3v" facs="#i6"/>
+         
+      
+            </div>
+        </body>
+    </text>
+</TEI>

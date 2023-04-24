@@ -12,7 +12,7 @@
     
     <!-- This stylesheet contains project-specific overrides for default functionality -->
     
-    <xsl:import href="import-transcribus.xsl"/>
+    <xsl:import href="import-transkribus.xsl"/>
     
     <xsl:function name="transkribus:regex_class_to_escape" as="xs:string">
         

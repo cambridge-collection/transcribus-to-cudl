@@ -35,7 +35,7 @@ The XSLT was designed to be easily extensible.
 The basic procedure is:
 
 1. Create a new XSLT file for the project.
-1. Add `<xsl:import href="import-transcribus.xsl"/>` as the first child of `<xsl:stylesheet>` so that the core functionalities of `import-transkribus.xsl` are available.
+1. Add `<xsl:import href="import-transkribus.xsl"/>` as the first child of `<xsl:stylesheet>` so that the core functionalities of `import-transkribus.xsl` are available.
 **NB:** It is vital to use `<xsl:import/>` rather than `<xsl:include/>`.  Imported templates/functions are automatically assigned a lower precedence to any defined within the calling XSLT file. That means that you can override any existing template/function by placing a project-specific one within the new project's xsl file.
 1. Add new templates/functions and/or override existing ones by placing the project-specific code within the project's xsl file.
 

@@ -122,6 +122,31 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="tei:revisionDesc/tei:change[. is (parent::*/tei:change)[last()]]">
+        <xsl:copy-of select="."/>
+        <xsl:value-of select="util:indent-elem(.)"/>
+        <xsl:call-template name="write-change"/>
+    </xsl:template>
+    
+    <xsl:template match="tei:teiHeader[not(tei:revisionDesc)]/*[. is (parent::*/*)[last()]]" priority="22">
+        <xsl:copy-of select="."/>
+        <xsl:value-of select="util:indent-elem(.)"/>
+        <revisionDesc>
+            <xsl:value-of select="util:indent-to-depth(count(ancestor::*) +1)"/>
+            <xsl:call-template name="write-change"/>
+            <xsl:value-of select="util:indent-elem(.)"/>
+        </revisionDesc>
+    </xsl:template>
+    
+    <xsl:template match="tei:revisionDesc[not(tei:change)]">
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <xsl:value-of select="util:indent-to-depth(count(ancestor::*) +1)"/>
+            <xsl:call-template name="write-change"/>
+            <xsl:value-of select="util:indent-elem(.)"/>
+        </xsl:copy>
+    </xsl:template>
+    
     <xsl:template match="tei:surface">
         <xsl:variable name="cudl_context" select="." />
         <xsl:variable name="surface_number" select="replace(@xml:id,'^\D+(\d+)$', '$1')"/>
@@ -199,6 +224,12 @@
     </xsl:template>
     
     <xsl:template match="tei:ab[not(normalize-space(@type))]/@type" mode="add-page-content"/>
+    
+    <xsl:template name="write-change">
+        <change when="{format-dateTime(current-dateTime(), '[Y4]-[M02]-[D02]T[H02]:[m02]:[s02]')}">
+            <xsl:text>Imported Transkribus transcription into main file</xsl:text>
+        </change>
+    </xsl:template>
     
     <!-- Optimised getters -->
     

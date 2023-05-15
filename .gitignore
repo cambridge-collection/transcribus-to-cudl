@@ -28,4 +28,7 @@ logo.png
 # Ignore IntellJ dir
 .idea/*
 
+# Ignore virtual environment directory
+venv/
+
 staging-cudl-data-source

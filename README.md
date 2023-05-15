@@ -7,6 +7,35 @@ Contains the XSLT that converts and tidies Transkribus-exported TEI files into C
 1. A TEI file exported from Transkribus
 2. A local copy of `staging-cudl-data-source`.
 
+## Publishing the new XSLT
+
+Required: Python3.8, AWS credentials configured for use.
+
+Recommended: Creating a virtual environment for the project's python code.
+
+1. Ensure that you have committed and pushed any changes to git.
+
+2. Install the required modules:
+
+       pip install -r requirements.txt
+
+3. Publish the version to s3 using:
+
+       python3 publish_xslt_to_s3.py
+
+   This script will zip up the xslt directory and upload it to s3.
+
+4. Commit the new version with
+
+       git add VERSION
+       git commit -m "Releasing new version"
+       git push
+
+Once complete you can deploy the new version by editing the configuration in
+https://github.com/cambridge-collection/cudl-terraform
+
+## Importing files manually
+
 If `staging-cudl-data-source` is placed at the root level of this repository, it will be automatically discovered by the XSLT code. 
 
 If it is placed anywhere else, you will need to pass the **full (not relative) path** to the XSLT using the `full_path_to_cudl_data_source` parameter.
@@ -16,15 +45,15 @@ You will then be able to run the transformation with the command e.g:
     java  -jar bin/saxon/saxon-he-10.2.jar -s:source.xml -xsl:xslt/curious-cures.xslt -o:output.xml
 
 
-## Running the transformation
+### Running the transformation
 
 The conversion code was designed to be easily extensible to enable project-specific needs. At present, there are two XSLT files that can be used to tidy and import the Transkribus file into a CUDL-flavoured version of TEI:
 
-### import-transkribus.xsl
+#### import-transkribus.xsl
 
 This is the core code within the project. It imports the file with minimal tidying. For many projects, this will likely be all that's required.
 
-### curious-cures.xsl
+#### curious-cures.xsl
 
 Imports the file in CUDL with extra source-specific tidies. It relies on the core code in import-transkribus.xsl - albeit overriding a couple of core functions so that they better suit the project's needs.
 

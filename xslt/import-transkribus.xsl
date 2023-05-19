@@ -38,7 +38,7 @@
     <xsl:variable name="path_to_cudl_file" select="replace(concat(string-join(($selected_path_to_cudl_source, $subpath_to_tei_dir, $cudl_filename),'/'),'/',$cudl_filename,'.xml'),'^file:','')"/>
     <xsl:variable name="cudl_root" select="if (doc-available($path_to_cudl_file)) then doc($path_to_cudl_file)/* else ()"/>
     
-    <xsl:key name="export_surfaces" match="//tei:surface" use="replace(@xml:id, 'facs_', '')" />
+    <xsl:key name="surface_elems" match="//tei:surface" use="replace(@xml:id, '^\D+', '')" />
     <xsl:key name="cudl_pb" match="//tei:pb" use="replace(replace(@facs, '^\D+(\d+)$', '$1'),'^0+', '')" />
     
     <!-- Low priority template to ensure that all nodes are copied - unless
@@ -150,7 +150,7 @@
     <xsl:template match="tei:surface">
         <xsl:variable name="cudl_context" select="." />
         <xsl:variable name="surface_number" select="replace(@xml:id,'^\D+(\d+)$', '$1')"/>
-        <xsl:variable name="imported_surface" select="transkribus:get-exported-surface($surface_number)"/>
+        <xsl:variable name="imported_surface" select="key('surface_elems', $surface_number, $export_root)"/>
         
         <xsl:copy>
             <xsl:copy-of select="@* except (@lrx, @lry, @ulx, @uly)"/>
@@ -170,7 +170,8 @@
     <xsl:template match="tei:zone" mode="add-zone">
         <xsl:value-of select="util:indent-to-depth(count(ancestor::*) + 2)"/>
         <xsl:copy>
-            <xsl:copy-of select="@*"/>
+            <xsl:copy-of select="@* except @points"/>
+            <xsl:attribute name="points" select="transkribus:rescale(., ancestor::tei:surface[1])"/>
             <xsl:apply-templates select="*|comment()" mode="add-zone"/>
             <xsl:if test="parent::tei:surface">
                 <xsl:value-of select="util:indent-to-depth(count(ancestor::*) + 2)"/>
@@ -240,10 +241,40 @@
         <xsl:copy-of select="key('cudl_pb', $target_surface_num, $cudl_root)"/>
     </xsl:function>
     
-    <xsl:function name="transkribus:get-exported-surface" as="item()*">
-        <xsl:param name="surface_number"/>
+    <xsl:function name="transkribus:rescale">
+        <xsl:param name="zone_elem"/>
+        <xsl:param name="imported_surface"/>
         
-        <xsl:copy-of select="key('export_surfaces', $surface_number, $export_root)"/>
+        <xsl:variable name="cudl_surface" select="key('surface_elems',$zone_elem/ancestor::tei:surface/replace(@xml:id,'^\D+(\d+)$', '$1'), $cudl_root)"/>
+        
+        <xsl:variable name="cudl_image_width" select="$cudl_surface/(tei:graphic[@width])[1]/replace(@width,'px$','')"/>
+        <xsl:variable name="cudl_image_height" select="$cudl_surface/(tei:graphic[@height])[1]/replace(@height,'px$','')"/>
+        <xsl:variable name="imported_image_width" select="$imported_surface/replace(@lrx,'px','')"/>
+        <xsl:variable name="imported_image_height"  select="$imported_surface/replace(@lry,'px','')"/>
+        
+        <xsl:if test="every $x in ($cudl_image_width, $cudl_image_height, $imported_image_width, $imported_image_height, tokenize($zone_elem/normalize-space(@points), '[\s+,]')) satisfies $x castable as xs:integer and $zone_elem/normalize-space(@points)[normalize-space(.)]">
+            <xsl:variable name="new_coords" as="xs:string*">
+                <xsl:for-each select="tokenize($zone_elem/normalize-space(@points), '\s+')">
+                    <xsl:variable name="x" select="xs:integer(tokenize(.,',')[1])"/>
+                    <xsl:variable name="y" select="xs:integer(tokenize(.,',')[2])"/>
+                    
+                    <xsl:variable name="new_x" select="transkribus:_rescale_point($x, xs:integer($imported_image_width), xs:integer($cudl_image_width))"/>
+                    <xsl:variable name="new_y" select="transkribus:_rescale_point($y, xs:integer($imported_image_height), xs:integer($cudl_image_height))"/>
+                    <xsl:sequence select="concat($new_x,',',$new_y)"/>
+                </xsl:for-each>
+            </xsl:variable>
+            
+            <xsl:value-of select="string-join($new_coords, ' ')"/>
+            
+        </xsl:if>
+    </xsl:function>
+    
+    <xsl:function name="transkribus:_rescale_point" as="xs:integer">
+        <xsl:param name="point" as="xs:integer"/>
+        <xsl:param name="current_max" as="xs:integer"/>
+        <xsl:param name="target_max" as="xs:integer"/>
+        
+        <xsl:value-of select="round(($point div $current_max) * $target_max)"/>
     </xsl:function>
 
 </xsl:stylesheet>
